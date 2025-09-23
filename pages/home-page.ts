@@ -4,14 +4,10 @@ export class HomePage {
   titleLocator: Locator
 
   constructor(page: Page) {
-    this.titleLocator = page.locator('h1[class="heading"]')
+    this.titleLocator = page.getByRole('heading', { name: 'Welcome to the-internet' })
   }
 
-  async goto(page: Page) {
-    await page.goto('https://the-internet.herokuapp.com/')
-  }
-
-  async validateTitle() {
+  async validateTitle(): Promise<void> {
     await expect(this.titleLocator).toHaveText('Welcome to the-internet')
   }
 }
