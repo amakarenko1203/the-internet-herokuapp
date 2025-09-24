@@ -11,9 +11,9 @@ test('Dropdown option 1 selection validation', async ({ page }) => {
 
   await homePage.clickOnDropdownLink()  
   
-  await dropdownPage.selectOption('Option 1')
+  await dropdownPage.selectOption('1')
 
-  await dropdownPage.validateSelectedOption('Option 1')   
+  await dropdownPage.validateSelectedOption('1')   
 })
 
 test('Dropdown option 2 selection validation', async ({ page }) => {
@@ -24,7 +24,7 @@ test('Dropdown option 2 selection validation', async ({ page }) => {
   
   await homePage.clickOnDropdownLink()  
   
-  await dropdownPage.selectOption('Option 2')
+  await dropdownPage.selectOption('2')
 
-  await dropdownPage.validateSelectedOption('Option 2')   
+  await dropdownPage.validateSelectedOption('2')   
 })

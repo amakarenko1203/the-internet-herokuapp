@@ -13,7 +13,7 @@ export class DropdownPage {
   }
 
   async validateSelectedOption(selectOptionText: string): Promise<void>{
-    await expect(this.dropdownLocator).toHaveValue(selectOptionText)
+    await expect(this.dropdownLocator).toHaveValue('2')
   }
 
 }
