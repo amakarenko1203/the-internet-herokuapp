@@ -5,6 +5,7 @@ export class HomePage {
   dropdownLocator:Locator
   forgotPasswordLink: Locator
   
+  
 
   constructor(page: Page) {
     this.titleLocator = page.getByRole('heading', { name: 'Welcome to the-internet' })
