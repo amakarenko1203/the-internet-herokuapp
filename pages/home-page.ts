@@ -3,11 +3,13 @@ import { Locator, Page, expect } from '@playwright/test'
 export class HomePage {
   titleLocator: Locator
   dropdownLocator:Locator
+  forgotPasswordLink: Locator
   
 
   constructor(page: Page) {
     this.titleLocator = page.getByRole('heading', { name: 'Welcome to the-internet' })
     this.dropdownLocator = page.getByRole('link', { name: 'Dropdown' })
+    this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot Password' })
   }
 
 
@@ -18,5 +20,8 @@ export class HomePage {
   async clickOnDropdownLink(): Promise<void>{
   await this.dropdownLocator.click()  
 }
+  async clickOnForgotPasswordLink(): Promise<void>{
+    await this.forgotPasswordLink.click()
 
+}
 }
