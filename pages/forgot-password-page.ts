@@ -1,4 +1,5 @@
 import { Locator, expect, Page } from '@playwright/test'
+import { HomePage } from './home-page'
 
 export class ForgotPasswordClass {
     titleLocator: Locator
@@ -13,10 +14,7 @@ export class ForgotPasswordClass {
         this.retreivePassButton = page.getByRole('button', { name: 'Retrieve password' })
         this.errorMessage = page.getByRole('heading', { name: 'Internal Server Error' })
     }
-    async goto(page: Page): Promise<void> {
-        await page.goto('https://the-internet.herokuapp.com/forgot_password')
-    }
-
+    
     async validatePageTitle(): Promise<void> {
         await expect(this.titleLocator).toHaveText('Forgot Password')
     }
