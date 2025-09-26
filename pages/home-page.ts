@@ -5,12 +5,15 @@ export class HomePage {
   dropdownLocator:Locator
   forgotPasswordLink: Locator
   clickCheckboxesLink: Locator
+  formAuthenticationLink: Locator
 
 
   constructor(page: Page) {
     this.titleLocator = page.getByRole('heading', { name: 'Welcome to the-internet' })
     this.dropdownLocator = page.getByRole('link', { name: 'Dropdown' })
     this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot Password' })
+    this.clickCheckboxesLink = page.getByRole('link', { name: 'Checkboxes' })
+    this.formAuthenticationLink = page.getByRole('link', { name: 'Form Authentication' })
   }
 
 
@@ -28,5 +31,8 @@ export class HomePage {
 
   async clickOnCheckboxesLink(): Promise<void> {
     await this.clickCheckboxesLink.click()
+  }
+  async clickOnFormAuthenticationLink(): Promise<void> {
+    await this.formAuthenticationLink.click()
   }
 }
