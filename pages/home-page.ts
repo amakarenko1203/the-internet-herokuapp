@@ -4,7 +4,8 @@ export class HomePage {
   titleLocator: Locator
   dropdownLocator:Locator
   forgotPasswordLink: Locator
-  
+  clickCheckboxesLink: Locator
+
 
   constructor(page: Page) {
     this.titleLocator = page.getByRole('heading', { name: 'Welcome to the-internet' })
@@ -23,5 +24,9 @@ export class HomePage {
   async clickOnForgotPasswordLink(): Promise<void>{
     await this.forgotPasswordLink.click()
 
-}
+  }
+
+  async clickOnCheckboxesLink(): Promise<void> {
+    await this.clickCheckboxesLink.click()
+  }
 }
