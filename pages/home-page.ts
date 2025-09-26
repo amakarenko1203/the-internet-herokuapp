@@ -4,6 +4,8 @@ export class HomePage {
   titleLocator: Locator
   dropdownLocator:Locator
   forgotPasswordLink: Locator
+  FormAuthenticationLink: Locator
+
   
   
 
@@ -11,6 +13,7 @@ export class HomePage {
     this.titleLocator = page.getByRole('heading', { name: 'Welcome to the-internet' })
     this.dropdownLocator = page.getByRole('link', { name: 'Dropdown' })
     this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot Password' })
+    this.FormAuthenticationLink = page.getByRole('link', { name: 'Form Authentication' })
   }
 
 
@@ -24,5 +27,8 @@ export class HomePage {
   async clickOnForgotPasswordLink(): Promise<void>{
     await this.forgotPasswordLink.click()
 
+}
+  async clickOnFormAuthenticationLink(): Promise<void>{
+    await this.FormAuthenticationLink.click()
 }
 }
